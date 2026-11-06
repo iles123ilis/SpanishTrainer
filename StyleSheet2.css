@@ -1,0 +1,442 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    line-height: 58px;
+    color: #F6EDFC;
+}
+
+/*========ВЫБОР ВРЕМЕНИ=======*/
+.task-list /*каждый пункт*/ {
+    list-style: none;
+    padding: 0;
+}
+.task-list li /*каждый пункт*/ {
+        margin-bottom: 10px;
+    }
+.div1 /*котейнер кнопки и списка выбора времени*/ {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+.bst /*кнопка выбора времени*/ {
+    background-color: #262626;
+    border-radius: 7px;
+    border: 1px solid #404040;
+    padding: 10px 16px;
+    color: white;
+    width: 200px;
+    height: 40px;
+   
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.dt /*Контейнер списка вместе с надписью*/{
+    
+    display: none;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    top: 110%;
+    color: white;
+    background-color: #262626;
+    border-radius: 10px;
+    border: 1px solid #404040;
+    padding: 10px 16px;
+    width: 220px;
+    gap: 10px;
+    padding-bottom: 15px;
+}
+input[type="checkbox"] /*чекбоксы*/ {
+    accent-color: #8b5cf6;
+}
+.dt p /*надпись где чекбоксы*/ {
+    color: #c084fc;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+
+/*========КАРТОЧКА========*/
+.card {
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: 2px solid #E1B7D7;
+}
+.card-top {
+    background-color: #5b21b6;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+    display: block;
+    background: rgba(52, 7, 122, 0.47);
+}
+.card-bottom {
+    background-color: #8b5cf6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #E1B7D7;
+}
+
+/*=======ЭЛЕМЕНТЫ КАРТОЧКМ=======*/
+.user-input /*поле ввода*/{
+    margin-top:50px;
+    width: 450px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e5e5e5;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    outline: none;
+}
+#random-btn /*кнопка переверки*/ {
+    color: white;
+    background-color: #111111; 
+    text-align: center;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 200px;
+    border: none;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+.score-card /*контейнер правильности*/{
+    display: flex;
+    background-color: white;
+    margin: 0 auto;
+    max-width: 550px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 10px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #404040;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+}
+.tenseTag /*время на карточке*/{
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: normal;
+    color: #d8b4fe;
+    display: block;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+#correct-count {
+    color: #16a34a;
+}
+#incorrect-count {
+    color: #dc2626;
+}
+#result-message /*надпись правильно или неправильно*/ {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    opacity: 1;
+}
+.result-message-container /*контейнер результат */ {
+    display: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    min-width: 400px;
+    text-align: center;
+}
+.signs /*кнопка диактритических знаков*/ {
+    background: hsl(0, 0%, 90%);
+    border: none;
+    font-size: 15px;
+    color: hsl(263, 69%, 42%);
+    padding: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.signs svg {
+    color: hsl(263, 69%, 42%);
+}
+.signs:hover {
+        background-color: #DDD6FE;
+    }
+.menu button {
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+.menu button:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+.menu {
+    display: none;
+    gap: 15px;
+    position: absolute;
+    left: 120px;
+    top: 12px;
+}
+.wrapeper {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+#textNoun {
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #CF60CD;
+}
+/*======СПРАВОЧНИК=======*/
+.bst2 /*кнопка справочник*/ {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    background-color: #5b21b6;
+    color: white;
+    border: none;
+    padding: 13px 19px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.modal-popup /*контейнер затемнения*/ {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: flex-end;
+    align-items: flex-start;
+
+}
+.modal-content /*кнопка и подпись*/ {
+    padding: 20px;
+    position: relative;
+    min-width: 300px;
+    max-width: 350px;
+    max-height: 85vh;
+    background-color: white;
+    top: 30px;
+    right: 10px;
+    border-radius: 15px;
+    color: hsl(215, 28%, 17%);
+}
+.modal-content h3 {
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+}
+.close-btn /*кнопка закрытия*/ {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 19px;
+    font-weight: 900; 
+    color: #374151;
+    cursor: pointer;
+    margin-left: 5px;
+    -webkit-text-stroke: 2px;
+    color: hsl(218, 11%, 65%);
+}
+.close-btn:hover {
+        color: hsl(215, 28%, 17%);
+}
+.tense-block /*контейнер спряжения*/{
+
+}
+.tense-title /*название времени в справочнике*/ {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding-top: 14px;
+    padding-bottom: 8px;
+    color: hsl(262, 83%, 58%);
+}
+.tense-block ul {
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #374151;
+}
+.tense-block li {
+    border-bottom: 2px solid hsl(220, 14%, 96%);
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        margin-top: 10px;
+    }
+    .user-input /*поле ввода*/ {
+       width: 90%;
+       margin-top: 10px;
+       margin-bottom: 0px;
+    }
+    .dropdown-container {
+        position: static;
+        margin-bottom: 10px;
+    }
+    .help-btn {
+        position: static;
+        margin-bottom: 15px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    .card-top {
+        font-size: 30px;
+        padding: 15px;
+    }
+    .card-bottom {
+        padding: 25px 15px;
+        gap: 20px;
+    }
+    .score-card {
+        font-size: 16px;
+        gap: 15px;
+    }
+
+
+    #random-btn /*кнопка переверки*/ {
+        margin-bottom: 15px;
+        margin-top: 0px;
+    }
+
+    .score-card /*контейнер правильности*/ {
+       width: 90%;
+    }
+
+    .result-message-container /*контейнер результат */ {
+        min-width: 50px;
+    }
+
+    .signs /*кнопка диактритических знаков*/ {
+        margin-top: 0px;
+        margin-left: 30px;
+        padding: 5px;
+    }
+
+        .signs svg {
+            color: hsl(263, 69%, 42%);
+        }
+
+        .signs:hover {
+            background-color: #DDD6FE;
+        }
+
+    .menu button {
+        padding: 5px 10px;
+        border-radius: 6px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+        .menu button:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+    .menu {
+        display: none;
+        gap: 15px;
+        position: absolute;
+        left: 80px;
+        top: 0px;
+    }
+
+    .wrapeper {
+        position: relative;
+        display: inline-block;
+        align-self: flex-start;
+    }
+
+    #textNoun {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 39px;
+        color: #CF60CD;
+    }
+    .tenseTag /*время на карточке*/ {
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: normal;
+        color: #d8b4fe;
+        display: block;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+
+    .bst2 /*кнопка справочник*/ {
+        top: 170px;
+        font-size: 12px;
+        right: 50px;
+    }
+    .bst /*кнопка выбора времени*/ {
+    width: 150px;
+    height: 40px;
+   margin-top: 150px;
+    font-size: 12px;
+    margin-left: 30px;
+}
+}
