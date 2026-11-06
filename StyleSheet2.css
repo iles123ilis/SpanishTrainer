@@ -233,7 +233,6 @@ input[type="checkbox"] /*чекбоксы*/ {
 }
 /*======СПРАВОЧНИК=======*/
 .bst2 /*кнопка справочник*/ {
-    position: fixed;
     right: 15px;
     top: 15px;
     background-color: #5b21b6;
@@ -428,14 +427,14 @@ input[type="checkbox"] /*чекбоксы*/ {
     }
 
     .bst2 /*кнопка справочник*/ {
-        top: 170px;
+        top: 50px;
         font-size: 12px;
-        right: 50px;
+        right: 10%;
     }
     .bst /*кнопка выбора времени*/ {
     width: 150px;
     height: 40px;
-   margin-top: 150px;
+    margin-top: 50px;
     font-size: 12px;
     margin-left: 30px;
 }
